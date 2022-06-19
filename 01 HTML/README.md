@@ -9,7 +9,7 @@ Semantic HTML
 
 - Meta Elements : description, keywords, author, auto-refresh
 
-- Other Tags : `abbr`, `address`, `pre`, `dl`, `table`, `iframe`, `map`, `area`, `img`,`audio`
+- Tags : `abbr`, `address`, `pre`, `dl`, `table`, `iframe`, `map`, `area`, `img`,`audio`, `video`, `embed`
 
 - Download link
 
