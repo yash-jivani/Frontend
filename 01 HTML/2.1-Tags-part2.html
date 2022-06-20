@@ -23,40 +23,108 @@
       <h2><b>Form Tag :</b></h2> 
       <form name="myForm" action="example.xyz">
 
-            <input type="text" placeholder="Text"> 
-<br>        <input type="password" placeholder="password">
-<br>        <input type="email" placeholder="email">
-<br>        <input type="number" placeholder="type:number">
+        <h3>text, password, email, number</h3>
+            <input type="text" placeholder="Text with 40 char len" size="40" required autofocus> 
+            <!-- password input with label  -->
+<br>        <label for="passwd">Password</label>
+            <input type="password" id="passwd" placeholder="password with limit" minlength="7" maxlength="18">
+<br>        <input type="email" placeholder="email" required>
+<br>        <input type="number" placeholder="type:number" min="2" max="10" value="2">
+<br>        <input type="number" placeholder="number with step" step="5">
 
-<br>        checkbox : 
-            One <input type="checkbox">
-            Two <input type="checkbox">
-
+        <h3>checkbox, Radio btn</h3>
+            checkbox : 
+            One <input type="checkbox" checked>
+            Two <input type="checkbox" disabled >
+            Three <input type="checkbox">
+            
 <br>        radio :
             v1 <input type="radio" name="sameName">
             v2 <input type="radio" name="sameName">
 
-<br>        simple Button: <input type="button" value="Btn" >
+        <h3>Simple btn</h3>
+            Simple Button: <input type="button" value="Btn" >
 
-<br>        Search box: <input type="search" placeholder="search">
-
-<br>        Range: <input type="range">
+        <h3>Range, Color</h3>
+            Range: <input type="range" >
 <br>        color: <input type="color">
 
+        <h3>Search, Tel, URL</h3>
+            Search box: <input type="search" placeholder="search">
 <br>        Tel: <input type="tel" placeholder="phone Number">
-
 <br>        URL: <input type="url" placeholder="URL">
 
-<br>        File: <input type="file">
+        <h3>Files</h3>
+            Upload any file: <input type="file">
+<br>        Upload File (only .jpg file): <input type="file" accept=".jpg">
+<br>        Upload File (only images): <input type="file" accept="image/*">
+<br>        Select more than one files: <input type="file" multiple>
 
-<br>        Date: <input type="date">
+        <h3>Date, Time, DateTime-Local, Month, Week</h3>
+            Date(with min max): <input type="date" min="2022-01-01" max="2022-05-01">
 <br>        Time: <input type="time">
 <br>        DateTime-local: <input type="datetime-local">
 <br>        Month: <input type="month">
 <br>        Week: <input type="week">
 
-<br>        <input type="submit" value="subMiT btn">
+        <h3>Submit, Reset</h3>
+            <input type="submit" value="subMiT btn">
 <br>        <input type="reset" value="reset btn">
+
+        <h3>textarea</h3>
+        <!-- cols => width, rows => height,  -->
+        <textarea cols="50" rows="10" placeholder="this is textarea..." style="resize: none;"></textarea>
+        
+        <h3>fieldset, legend</h3>
+        <fieldset>
+            <legend>Login Information</legend>
+            id : <input type="text"> <br>
+            email : <input type="email"> <br>
+            password : <input type="password">
+        </fieldset>
+
+        <h3>Select, Option</h3>
+        Course: <select>
+            <option value="">None</option>
+            <option value="0">zero</option>
+            <option value="1" selected>One</option>
+            <option value="2">Two</option>
+            <option value="disable" disabled>disable option</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+            <!-- options with same category -->
+            <optgroup label="Programming languages">
+                <option value="py">python</option>
+                <option value="cpp" selected>C++</option>
+                <option value="c">C</option>
+            </optgroup>
+            <optgroup label="Web languages">
+                <option value="js">JavaScript</option>
+                <option value="php" selected>php</option>
+            </optgroup>
+
+        </select>
+
+        <h3>Button tag</h3>
+        <button type="button">Normal</button>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+        <h3>Datalist tag</h3>
+        <input type="text" list="myList">
+        <datalist id="myList">
+            <option value="a"></option>
+            <option value="ab"></option>
+            <option value="abc"></option>
+            <option value="bb"></option>
+            <option value="bdd"></option>
+            <option value="btt"></option>
+            <option value="c"></option>
+            <option value="cc"></option>
+            <option value="ccc"></option>
+        </datalist>
+
+
 
       </form>
 </body>
