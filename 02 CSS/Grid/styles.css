@@ -1,0 +1,164 @@
+/* ########## Spanning and Placing ########## */
+
+.container{
+    height: 10rem;
+
+    display: grid;
+/* define Num. of cols */
+    grid-template-columns: repeat(5, 1fr);
+    /* grid-template-columns: 1fr 2fr 3fr 2fr; */
+
+/* we also have MORE OR LESS Row in grid */
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    background-color: gray;
+    /* gap: 20px; */
+    column-gap: 10px;
+    row-gap: 5px;
+
+    /* temp change */
+    display: none;
+}
+
+.grid_cell{
+    background-color: cornflowerblue;
+    border: 1px solid black;
+}
+
+.One{
+    background-color:red;
+
+/* start from 1st col and span all cols */
+    grid-column: 1/-1;
+}
+
+.Two{
+    background-color:greenyellow;
+
+/* start from 2nd col and span upto 5th col */
+    grid-column: 2/5;
+/* start from 2nd col and span next 3 cols */
+    /* grid-column: 2 / 3 span; */
+}
+
+.Three{
+    background-color:blueviolet ;
+/* shift THIS Div to (1 to 2 col & 3 and 4 row) position */
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.Four{
+    background-color:yellow;
+/* span all col at col 2 to last */
+    grid-column: 2/-1;
+}
+    
+.Five{
+    background-color:goldenrod;
+/* start from 4th row and span upto 7th row */
+    
+    grid-row: 4/7;
+/* start form 4th row and span 4 row */
+    grid-row: 4/ span 3;
+
+}
+
+.Six{
+    background-color:salmon ;
+    grid-column: 1/2;
+    grid-row: 4/6;
+}
+
+.Seven{
+    background-color:cadetblue ;
+    grid-column: 3/5;
+    grid-row: 4/8;
+}
+
+.eight{
+    background-color: bisque;
+}
+
+.Other{
+    background-color: darkslategrey;
+    color: white;
+    grid-column: 4/5;
+    grid-row: 6/5;
+}
+
+/* ########## Align items and track ########## */
+
+.container-2{
+    background-color: aquamarine;
+    height: 600px;
+
+    border: 2px solid black;
+/* grid */
+    display: grid;
+    grid-template-columns: 150px 120px 150px;
+    grid-template-rows: 40px 40px 40px;
+
+/* alignment - track | expri. with dev. tool */
+/* justify -> left-right | align -> up-down */
+
+    /* align whole grid */
+    justify-content: center;
+    align-content: center;
+
+    /* align grid cell */
+    justify-items: center;    
+    align-items: center;
+}
+
+.a{
+    background-color: cornflowerblue;
+    /* overwrite justify-item for particular cell */
+    align-self: start;
+    justify-self: end;
+}
+
+.b{
+    background-color: darkslategrey;
+    color: white;
+    align-self: flex-end;
+    justify-self: start;
+}
+
+.c{
+    background-color:greenyellow;
+    align-self: end;
+    justify-self: start;
+}
+
+.d{
+    background-color:blueviolet;
+    color: white;
+    align-self: end;
+    justify-self: start;
+}
+
+.e{
+    background-color:yellow;
+    align-self: flex-start;
+    justify-self: end;
+
+}
+
+.f{
+    background-color:goldenrod;
+    align-self: center;
+    justify-self: end;
+}
+ 
+.g{
+    background-color:cadetblue ;
+    align-self: flex-start;
+    justify-self: center;
+}
+
+.h{
+    background-color: bisque;
+    align-self: end;
+    justify-self: end;
+}
