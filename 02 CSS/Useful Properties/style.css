@@ -1,0 +1,20 @@
+/* 
+
+* ################ BACKGROUND ################# 
+
+background: color URL repeat position;
+background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+
+* ################ SHADOW ################# 
+
+#### text-shadow ####
+text-shadow : horizontal vertical blur color;
+
+#### box-shadow ####
+box-shadow: horizontal vertical blur spread color;
+
+* ################ ANIMATION ################# 
+
+animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+
+*/
