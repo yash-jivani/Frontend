@@ -26,4 +26,18 @@ border : 10px solid red;        -> Border is created inside the element,
 outline : 10px solid red;       -> outline is created outside the element.
 outline-offset : 2px;           -> line drawn around elements, outside the border edge
 
+* ################ LINK ################# 
+
+Order -> :link, :visited, :hover, :active
+
+* ################ POSITIONS ################# 
+
+static      -> normal flow (default)    
+relative    -> jis div ko relative position di hai vha se ((left,right,top,bottom))
+absolute    -> positioned relative to the nearest positioned ancestor (best practice : set parent div position relative)  ((left,right,top,bottom))
+sticky      -> positioned based on the user's scroll position. ((left,right,top,bottom))
+fixed       -> positioned relative to the viewport ((left,right,top,bottom))
+
+DEMO -> https://css-tricks.com/almanac/properties/p/position/
+
 */
