@@ -5,6 +5,7 @@
 background: color URL repeat position;
 background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
 
+
 * ################ SHADOW ################# 
 
 #### text-shadow ####
@@ -13,22 +14,26 @@ text-shadow : horizontal vertical blur color;
 #### box-shadow ####
 box-shadow: horizontal vertical blur spread color;
 
+
 * ################ ANIMATION ################# 
 
 animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+
 
 * ################ Other properties with usage ################# 
 
 display : none;                 -> the tag will not appear on the page at all (although you can still interact with it through the dom).
 visibilty: hidden;              -> the tag is not visible, but space is allocated for it on the page.
 display : inline;               -> vertical no chnages(margin)
-border : 10px solid red;        -> Border is created inside the element,
-outline : 10px solid red;       -> outline is created outside the element.
+border : 10px solid gray;        -> Border is created inside the element,
+outline : 10px solid lightgray;       -> outline is created outside the element.
 outline-offset : 2px;           -> line drawn around elements, outside the border edge
+
 
 * ################ LINK ################# 
 
 Order -> :link, :visited, :hover, :active
+
 
 * ################ POSITIONS ################# 
 
@@ -39,5 +44,50 @@ sticky      -> positioned based on the user's scroll position. ((left,right,top,
 fixed       -> positioned relative to the viewport ((left,right,top,bottom))
 
 DEMO -> https://css-tricks.com/almanac/properties/p/position/
+
+
+* ################ Pseudo classes & pseudo elements ################# 
+
+pseudo elements ::
+    ::before, ::after, ::first-letter, ::first-line
+
+pseudo classes : 
+    :hover, :link, :visited, :enabled, :first-child, :nth-child(n), :nth-last-child(n), :nth-of-type(n)...
+
+
+* ################ Specificity ################# 
+
+  !important    inline    id    class   tags/pseudo-Ele
+       0           0       0      0          0
+
+examples : 
+
+0, 0, 0, 0, 1
+h1{
+    // preperties
+}
+
+0, 0, 0, 1, 0
+.header{
+    // preperties
+}
+
+0, 0, 1, 0, 0
+#head{
+    // preperties
+}
+
+0, 0, 1, 1, 2
+#head .cls h1 p{
+    // preperties
+}
+
+1, 0, 0, 1, 0
+.header-2{
+    property !important;
+}
+
+
+
 
 */
