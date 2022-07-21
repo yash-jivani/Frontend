@@ -17,4 +17,13 @@ box-shadow: horizontal vertical blur spread color;
 
 animation: name duration timing-function delay iteration-count direction fill-mode play-state;
 
+* ################ Other properties with usage ################# 
+
+display : none;                 -> the tag will not appear on the page at all (although you can still interact with it through the dom).
+visibilty: hidden;              -> the tag is not visible, but space is allocated for it on the page.
+display : inline;               -> vertical no chnages(margin)
+border : 10px solid red;        -> Border is created inside the element,
+outline : 10px solid red;       -> outline is created outside the element.
+outline-offset : 2px;           -> line drawn around elements, outside the border edge
+
 */
