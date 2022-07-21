@@ -1,12 +1,12 @@
 /* 
 
-* ################ BACKGROUND ################# 
+* ################ Background ################# 
 
 background: color URL repeat position;
 background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 
-* ################ SHADOW ################# 
+* ################ Shadows ################# 
 
 #### text-shadow ####
 text-shadow : horizontal vertical blur color;
@@ -15,7 +15,7 @@ text-shadow : horizontal vertical blur color;
 box-shadow: horizontal vertical blur spread color;
 
 
-* ################ ANIMATION ################# 
+* ################ Animations ################# 
 
 animation: name duration timing-function delay iteration-count direction fill-mode play-state;
 
@@ -30,12 +30,12 @@ outline : 10px solid lightgray;       -> outline is created outside the element.
 outline-offset : 2px;           -> line drawn around elements, outside the border edge
 
 
-* ################ LINK ################# 
+* ################ Link ################# 
 
 Order -> :link, :visited, :hover, :active
 
 
-* ################ POSITIONS ################# 
+* ################ Positions ################# 
 
 static      -> normal flow (default)    
 relative    -> jis div ko relative position di hai vha se ((left,right,top,bottom))
@@ -88,6 +88,32 @@ h1{
 }
 
 
+* ################ Selectors ################# 
 
+Child selector (>) ,
+Adjacent sibling selector (+) ,
+General sibling selector (~) 
+
+1. child ( > )  : selects all elements that are the children of a specified element.
+example - 
+https://www.w3schools.com/css/tryit.asp?filename=trycss_sel_element_gt 
+https://www.javatpoint.com/css-combinators
+
+2. adjacent sibling selector (+) : select an element that is directly after another specific element. 
+example - 
+https://www.w3schools.com/css/tryit.asp?filename=trycss_sel_element_pluss
+https://www.javatpoint.com/css-combinators
+
+3. general sibling selector (~) : selects all elements that are next siblings of a specified element.
+example - 
+https://www.w3schools.com/css/tryit.asp?filename=trycss_sel_element_tilde
+https://www.javatpoint.com/css-combinators
+
+Other :
+p.classname{...}
+     ==> You are looking for a <p> with class classname
+
+.classname p{...}
+    ==> You are looking for a p that is a descendant of the classes classname.
 
 */
