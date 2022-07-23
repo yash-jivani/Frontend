@@ -15,19 +15,10 @@ text-shadow : horizontal vertical blur color;
 box-shadow: horizontal vertical blur spread color;
 
 
-* ################ Animations ################# 
+* ################ Animations/transitions ################# 
 
-animation: name duration timing-function delay iteration-count direction fill-mode play-state;
-
-
-* ################ Other properties with usage ################# 
-
-display : none;                 -> the tag will not appear on the page at all (although you can still interact with it through the dom).
-visibilty: hidden;              -> the tag is not visible, but space is allocated for it on the page.
-display : inline;               -> vertical no chnages(margin)
-border : 10px solid gray;        -> Border is created inside the element,
-outline : 10px solid lightgray;       -> outline is created outside the element.
-outline-offset : 2px;           -> line drawn around elements, outside the border edge
+animation: name | duration | timing-function | delay | iteration-count | direction | fill-mode | play-state;
+transition: property name | duration | easing function | delay ;
 
 
 * ################ Link ################# 
@@ -115,5 +106,67 @@ p.classname{...}
 
 .classname p{...}
     ==> You are looking for a p that is a descendant of the classes classname.
+
+
+* ################ Units ################# 
+
+rem -> connected with root font-size
+em -> conneted with parent font-size
+% -> according to it's parent 
+vh -> View Height of screen 
+vw -> View Width of screen
+
+
+* ################ Other properties with usage ################# 
+
+display : none;                 
+-> the tag will not appear on the page at all (although you can still interact with it through the dom).
+
+visibilty: hidden;              
+-> the tag is not visible, but space is allocated for it on the page.
+
+display : inline;               
+-> vertical no chnages(margin)
+
+border : 10px solid gray;        
+-> Border is created inside the element,
+
+outline : 10px solid lightgray;       
+-> outline is created outside the element.
+
+outline-offset : 2px;                 
+-> line drawn around elements, outside the border edge
+
+object-fit : fill/contain/cover/none/scale-down ;
+-> used to specify how an <img> or <video> should be resized to fit its container.
+
+shape-outside : none/margin-box/content-box/border-box/padding-box/circle()/ellipse()... ;
+-> non-rectangular—around which adjacent inline content should wrap.
+
+filter : blur()/brightness()/contrast()/opacity()/url()... ;
+-> applies graphical effects like blur or color shift to an element.
+
+aspect-ratio : ;
+-> https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio
+
+::file-selector-button (pseudo element)
+-> represents the button of an <input> of type="file".
+
+text-underline-offset : 1px,5px,7px... ;
+-> the offset distance of an underline text decoration line (applied using text-decoration) from its original position.
+
+text-underline-thickness : 1px,5px,7px... ;
+-> used on text in an element, such as a line-through, underline, or overline.
+
+scroll-snap : ;
+-> https://codepen.io/tutsplus/pen/qpJYaK
+-> https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type
+
+calc() function :
+-> https://developer.mozilla.org/en-US/docs/Web/CSS/calc
+
+transforms : ;
+-> https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+
 
 */
