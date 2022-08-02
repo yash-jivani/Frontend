@@ -1,0 +1,20 @@
+{
+  "name": "trillo",
+  "version": "1.0.0",
+  "description": "learn flexbox from basics to advance",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "sass",
+    "flexbox"
+  ],
+  "author": "Yash Jivani",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
