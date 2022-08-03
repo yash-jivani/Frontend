@@ -1,0 +1,128 @@
+/*
+
+COLORS
+
+Primary: #eb2f64
+Primary light: #FF3366
+Primary dark: #BA265D
+Grey light 1: #faf9f9
+Grey light 2: #f4f2f2
+Grey light 3: #f0eeee
+Grey light 4: #ccc
+Grey dark 1: #333
+Grey dark 2: #777
+Grey dark 3: #999
+
+*/
+:root {
+  --primary: #eb2f64;
+  --primary-light: #FF3366;
+  --primary-dark: #BA265D;
+  --grey-light-1: #faf9f9;
+  --grey-light-2: #f4f2f2;
+  --grey-light-3: #f0eeee;
+  --grey-light-4: #ccc;
+  --grey-dark-1: #333;
+  --grey-dark-2: #777;
+  --grey-dark-3: #999; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: "open-sans",sans-serif;
+  color: var(--gray-dark-1);
+  background-image: linear-gradient(to right bottom, var(--primary-dark), var(--primary-light));
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+/*
+
+COLORS
+
+Primary: #eb2f64
+Primary light: #FF3366
+Primary dark: #BA265D
+Grey light 1: #faf9f9
+Grey light 2: #f4f2f2
+Grey light 3: #f0eeee
+Grey light 4: #ccc
+Grey dark 1: #333
+Grey dark 2: #777
+Grey dark 3: #999
+
+*/
+:root {
+  --primary: #eb2f64;
+  --primary-light: #FF3366;
+  --primary-dark: #BA265D;
+  --grey-light-1: #faf9f9;
+  --grey-light-2: #f4f2f2;
+  --grey-light-3: #f0eeee;
+  --grey-light-4: #ccc;
+  --grey-dark-1: #333;
+  --grey-dark-2: #777;
+  --grey-dark-3: #999; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: "open-sans",sans-serif;
+  color: var(--gray-dark-1);
+  background-image: linear-gradient(to right bottom, var(--primary-dark), var(--primary-light));
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.container {
+  min-height: 100vh;
+  max-width: 120rem;
+  background-color: #fff;
+  margin: 8rem auto;
+  box-shadow: 0px 1px 10px 0px black; }
+
+.header-nav {
+  display: flex;
+  padding: 2rem 1.5rem;
+  justify-content: space-between;
+  align-items: center; }
+  .header-nav .logo img {
+    height: 3rem;
+    width: 100%; }
+  .header-nav .searchBox .search {
+    border: none;
+    background-color: var(--grey-light-3);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-size: 1.6rem; }
+  .header-nav .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; }
+    .header-nav .profile a {
+      font-size: 1.6rem;
+      text-decoration: none;
+      color: var(--dark-gray-2); }
+    .header-nav .profile .user {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center; }
+      .header-nav .profile .user img {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%; }
+
+.contant {
+  display: flex; }
