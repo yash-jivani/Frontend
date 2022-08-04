@@ -7,6 +7,10 @@
     background-color: #fff;
     margin: 8rem auto;
     box-shadow: 0px 1px 10px 0px black;
+    @media screen and (max-width:1200px){
+        margin: 0;
+    }
+
 }
 
 .header-nav{
@@ -15,11 +19,22 @@
     justify-content: space-between;
     align-items: center;
 
+    @media screen and (max-width:560px) {
+        flex-wrap: wrap;
+    }
     .logo{
         img{
             height: 3rem;
             width: 100%;
         
+        }
+    }
+
+    .searchBox{
+        @media screen and (max-width:560px) {
+            order: 5;
+            padding-top: 1rem;
+            flex-grow: 1;
         }
     }
 
@@ -30,6 +45,10 @@
         padding: 1rem 2rem;
         border-radius: 2rem;
         font-size: 1.6rem;
+        @media screen and (max-width:560px) {
+            width: 100%;
+        }
+
     }
 
     .profile{
@@ -64,6 +83,9 @@
 
 .contant{
     display: flex;
+    @media screen and (max-width:900px) {
+        flex-direction: column;
+    }
 }
 .contant-nav{
     flex-basis: 80rem;
@@ -73,6 +95,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media screen and (max-width:900px) {
+        flex-direction: row;
+        flex-basis: 0;
+        padding: 0;
+
+    }
     .navigation{
         list-style: none;
         text-transform: uppercase;
@@ -81,6 +109,11 @@
         flex-grow: 1;
         gap: 1rem;
         font-size: 1.6rem;
+        @media screen and (max-width:900px) {
+            flex-direction: row;
+            // flex-grow: 1;
+            justify-content: center;
+        }
         a{
             display: inline-block;
             padding: 1.5rem 2rem;
@@ -100,6 +133,9 @@
         font-size: 1.3rem;
         padding: 0rem 2rem;
         color: whitesmoke;
+        @media screen and (max-width:900px) {
+            display: none;
+        }
     }
 }
 .main-contant{
@@ -126,13 +162,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media screen and (max-width:900px) {
+        padding: 0;
+    }
     &__hotel{
         display: flex;
         justify-content: space-around;
         font-size: 4rem;
         text-transform: uppercase;
         flex-basis: 40%;
-
+        @media screen and (max-width:900px) {
+            font-size: 25px;
+        }
         .name{
             color: var(--grey-dark-1);
         }
@@ -146,8 +187,14 @@
         flex-basis: 20%;
         justify-content: space-between;
         align-items: center;
+        @media screen and (max-width:1130px) {
+            text-align: center;
+        }
         &__location{
             font-size: 2rem;
+            @media screen and (max-width:900px) {
+                font-size: 14px;
+            }
         }
 
         &__vote{
@@ -174,6 +221,9 @@
     padding: 2rem;
     color: gray;
     display: flex;
+    @media screen and (max-width:900px) {
+        flex-direction: column;
+    }
 }
 
 .feature{
@@ -209,6 +259,13 @@
         border-bottom:1px solid rgba(128, 128, 128, 0.5) ;
         border-top:1px solid rgba(128, 128, 128, 0.5) ;
         
+        @media screen and (max-width:970px) {
+            gap: 1rem;
+        }
+        @media screen and (max-width:900px) {
+            gap: 3rem;
+        }v
+
         &-two{
             font-size: 1.6rem;
         }
