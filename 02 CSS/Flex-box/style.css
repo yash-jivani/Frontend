@@ -1,0 +1,91 @@
+.box {
+
+    background-color: lightcoral;
+    border: 2px solid black;
+    display: flex;
+
+    /* chnage direction of main-axis */
+    flex-direction: row-reverse;
+
+    /* wrap items if there is no space */
+    flex-wrap: wrap;
+
+    /* justify content according to main-axis */
+    justify-content: space-around;
+
+    /* align items according to cross-axis */
+    align-items: center;
+
+    /* align-contant will only work if we have more than 2 row and empty space in cross axis */
+    align-content: center;
+
+    /* Shorthand of flex-direction and flex-wrap */
+    flex-flow: row wrap;  
+
+}
+
+.item{
+
+    /* border: 1px solid red; */
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+
+
+    /* 
+    ? flex ?
+    shorthand of flex-grow, flex-shrink, flex-basis
+    
+    /* item will not grow, item will not shrink, flex-item size 100px */
+    /* flex: 0 0 100px;  */
+    
+    /* item will grow, shrink and basis=auto*/
+    /* flex: 1; */
+    
+}
+
+.item-1{
+
+    /*
+    ? flex-grow ::
+    flex items can grow along the main axis from their flex-basis
+    >> default value : 0
+    */
+    /* flex-grow: 1; */
+
+    border: 3px solid green;
+}
+
+.item-2{
+
+    /* 
+    ? flex-shrink ::
+    >> default value : 1    
+    */
+    /* flex-shrink: 0; */
+    
+    border: 3px solid darkslateblue;
+}
+
+.item-3{
+
+    /* 
+    ? flex-basis ::
+    It specifies the initial size of the flex item, before any available space is distributed according to the flex factors. 
+    ! NOTE : flex-basis flow in main-axis |
+    - if flex direction = row thn item's width will affected 
+    - if flex direction = column thn ite's height will affected
+    >> default value : auto
+    */
+    flex-basis: 200px;
+
+    /* it will not shrink */ 
+    /* flex-shrink: 0;   */
+
+    border: 3px solid lightskyblue;
+}
+
+.item-4{
+    flex-basis: 60px;
+    border: 3px solid yellow;
+}
