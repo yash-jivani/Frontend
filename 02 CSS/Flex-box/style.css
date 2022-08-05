@@ -61,6 +61,7 @@
     /* 
     ? flex-shrink ::
     >> default value : 1    
+    it specifies how the item will shrink relative to the rest of the flexible items inside the same container
     */
     /* flex-shrink: 0; */
     
