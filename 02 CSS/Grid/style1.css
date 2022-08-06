@@ -1,0 +1,102 @@
+p{
+    font-size: 1.6rem;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/*
+    ? GRID NUMBERS //////////////////////////////
+*/
+
+.container{
+    background-color: grey;
+    max-width: 1250px;
+    padding: 10px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr) ;
+    grid-template-rows:1fr 2fr 3fr 1fr 1fr;
+    gap: 5px;
+}
+
+.item{
+    padding: 10px;
+    background-color: orangered;
+    color: whitesmoke;
+}
+
+.item--1{
+    grid-column: 1 / -1;
+}
+
+.item--5{
+    grid-row: 2 / 3 span;
+}
+
+.item--6{
+    grid-column: 1 / 3 span;
+    grid-row: 3 / 2 span;
+}
+
+.item--7{
+    grid-column: 1 / -1;
+}
+
+/*
+    ? GRID TEMPLATE AREAS ///////////////////////////
+*/
+
+.container-2{
+    background-color: grey;
+    max-width: 1250px;
+    padding: 10px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr) ;
+    grid-template-rows:1fr 2fr 3fr 1fr 1fr;
+    gap: 5px;
+
+    grid-template-areas: 
+        ". head head ."
+        "box-1 box-2 box-3 sidebar"
+        "main main main sidebar"
+        "main main main sidebar"
+        "foot foot foot foot"
+    ;
+
+}
+
+.item2{
+    padding: 10px;
+    background-color: orangered;
+    color: whitesmoke;
+}
+
+.item--01{
+    grid-area: head;
+}
+
+.item--02{
+    grid-area: box-1;
+}
+
+.item--03{
+    grid-area: box-2;
+}
+
+.item--04{
+    grid-area: box-3;
+}
+
+.item--05{
+    grid-area: sidebar;
+}
+
+.item--06{
+    grid-area: main;
+}
+
+.item--07{
+    grid-area: foot;
+}
