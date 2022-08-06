@@ -1,0 +1,142 @@
+p {
+  font-size: 1.6rem;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.container {
+  background-color: grey;
+  max-width: 1250px;
+  padding: 10px;
+  margin: 0 auto;
+  display: grid;
+
+  /* ? EXPLICIT rows and columns */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 50px);
+  gap: 5px;
+
+  /* 
+    change grid flow of adding new grid items 
+    default value "row" 
+    */
+  grid-auto-flow: row;
+
+  /* ? IMPLICIT rows and columns */
+  /* if we have more rows than we define in (grid-template-rows) */
+  grid-auto-rows: 150px;
+
+  /* 
+    if we have more cols than we define in (grid-template-columns) 
+    it's happens if grid-auto-flow is column
+    */
+  /* grid-auto-flow: column; */
+  grid-auto-columns: 155px;
+}
+
+.item {
+  padding: 10px;
+  background-color: orangered;
+  color: whitesmoke;
+}
+
+.One {
+  background-color: red;
+}
+
+.Two {
+  background-color: greenyellow;
+  color: black;
+}
+
+.Three {
+  background-color: blueviolet;
+}
+
+.Four {
+  background-color: yellow;
+  color: black;
+}
+
+.Five {
+  background-color: goldenrod;
+}
+
+.Six {
+  background-color: salmon;
+}
+
+.Seven {
+  background-color: cadetblue;
+  color: black;
+}
+
+.eight {
+  background-color: bisque;
+  color: black;
+}
+
+.container1 {
+  background-color: grey;
+  max-width: 1250px;
+  padding: 10px;
+  margin: 0 auto;
+  display: grid;
+
+  /* 
+    - minmax(v1,v2) width v1 and v2 ke bich me hi rahegi
+  */
+
+  grid-template-rows: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+
+  /* col side by side while width is less then 200px else create new row */
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+
+  /* remove 5 div from html to see diff. b/w "auto-fit vs auto-fill"  */
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+
+}
+
+.item1 {
+  padding: 10px;
+  background-color: orangered;
+  color: whitesmoke;
+}
+
+.item--1 {
+  background-color: red;
+}
+
+.item--2 {
+  background-color: greenyellow;
+  color: black;
+}
+
+.item--3 {
+  background-color: blueviolet;
+}
+
+.item--4 {
+  background-color: yellow;
+  color: black;
+}
+
+.item--5 {
+  background-color: goldenrod;
+}
+
+.item--6 {
+  background-color: salmon;
+}
+
+.item--7 {
+  background-color: cadetblue;
+  color: black;
+}
+
+.item--8 {
+  background-color: bisque;
+  color: black;
+}
