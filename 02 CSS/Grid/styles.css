@@ -1,3 +1,10 @@
+h1{
+    font-size: 1.6rem;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 /* ########## Spanning and Placing ########## */
 
 .container{
@@ -15,9 +22,6 @@
     /* gap: 20px; */
     column-gap: 10px;
     row-gap: 5px;
-
-    /* temp change */
-    display: none;
 }
 
 .grid_cell{
@@ -111,54 +115,59 @@
     align-items: center;
 }
 
+.grid_cell1{
+    border: 2px solid blue;
+}
+
 .a{
     background-color: cornflowerblue;
     /* overwrite justify-item for particular cell */
-    align-self: start;
-    justify-self: end;
+
+    /* align-self: start;
+    justify-self: end; */
 }
 
 .b{
     background-color: darkslategrey;
     color: white;
-    align-self: flex-end;
-    justify-self: start;
+    /* align-self: flex-end;
+    justify-self: start; */
 }
 
 .c{
     background-color:greenyellow;
-    align-self: end;
-    justify-self: start;
+    /* align-self: end;
+    justify-self: start; */
 }
 
 .d{
     background-color:blueviolet;
     color: white;
-    align-self: end;
-    justify-self: start;
+    /* align-self: end;
+    justify-self: start; */
 }
 
 .e{
     background-color:yellow;
-    align-self: flex-start;
-    justify-self: end;
+    /* align-self: flex-start;
+    justify-self: end; */
 
 }
 
 .f{
     background-color:goldenrod;
-    align-self: center;
-    justify-self: end;
+    /* align-self: center;
+    justify-self: end; */
 }
  
 .g{
     background-color:cadetblue ;
-    align-self: flex-start;
-    justify-self: center;
+    /* align-self: flex-start;
+    justify-self: center; */
 }
 
 .h{
     background-color: bisque;
-    align-self: end;
-    justify-self: end;
+    /* align-self: end;
+    justify-self: end; */
 }
