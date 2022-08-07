@@ -2,7 +2,7 @@
 // Header section layout
 
 .main-layout{
-    background-color: red;
+    // background-color: red;
     display: grid;
     // height: 80vh;
     grid-template-columns: 6rem 1fr;
@@ -13,6 +13,11 @@
 }
 
 .main{
-    background-color: green;
+    // background-color: green;
+}
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
 }
 

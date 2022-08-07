@@ -20,15 +20,15 @@ body {
   cursor: pointer; }
 
 .main-layout {
-  background-color: red;
   display: grid;
   grid-template-columns: 6rem 1fr; }
 
 .navigation {
   background-color: #c69963; }
 
-.main {
-  background-color: green; }
+.container {
+  max-width: 120rem;
+  margin: 0 auto; }
 
 .header {
   display: grid;
@@ -129,3 +129,32 @@ body {
     font-size: 1.3rem;
     align-self: start;
     color: #aaa; }
+
+.features {
+  color: black;
+  font-size: 1.5rem; }
+
+.features-wrapper {
+  margin: 7vw auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 4rem; }
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-content: start;
+  row-gap: 1rem;
+  column-gap: 2rem; }
+  .feature__icon {
+    fill: #c69963;
+    height: 3vw;
+    display: block;
+    grid-row: 1/2 span;
+    width: 4vw; }
+  .feature__title {
+    color: #54483A;
+    font-size: 2.5rem; }
+  .feature__text {
+    color: #6D5D4B;
+    font-size: 1.8rem; }
