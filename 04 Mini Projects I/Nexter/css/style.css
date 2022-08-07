@@ -215,3 +215,44 @@ body {
   .story-btn {
     margin-top: 2rem;
     align-self: flex-start; }
+
+.homes {
+  margin: 10vw auto; }
+  .homes-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 5rem; }
+    .homes-wrapper__home {
+      background-color: #f9f7f6; }
+      .homes-wrapper__home img {
+        width: 100%;
+        display: block; }
+      .homes-wrapper__home-name {
+        font-size: 1.8rem;
+        background-color: #101d2c;
+        padding: 1.2rem 2rem;
+        text-align: center;
+        color: #f9f7f6;
+        width: 80%;
+        margin: 0 auto;
+        transform: translateY(-26px); }
+      .homes-wrapper__home .list-container {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 3rem;
+        gap: 2rem;
+        margin: 2rem 0; }
+        .homes-wrapper__home .list-container-item {
+          display: flex;
+          align-items: center;
+          font-size: 1.8rem; }
+          .homes-wrapper__home .list-container-item svg {
+            fill: #6D5D4B;
+            height: 2.5vw;
+            width: 1.5vw;
+            margin-right: 1rem; }
+  .homes__btn {
+    font-weight: 600;
+    width: 100%;
+    padding: 2rem 3rem; }

@@ -1,0 +1,53 @@
+.homes{
+    // background-color: yellow;
+    margin: 10vw auto;
+    &-wrapper{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+        gap: 5rem;
+        
+        &__home{
+            background-color: $color-grey-light-1;
+            img{
+                width: 100%;
+                display: block;
+            }
+            &-name{
+                font-size: 1.8rem;
+                background-color: $color-secondary;
+                padding: 1.2rem 2rem;
+                text-align: center;
+                color: $color-grey-light-1;
+                width: 80%;
+                margin: 0 auto;
+                transform: translateY(-26px);
+            }
+            
+            .list-container{
+                position: relative;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                padding: 0 3rem ;
+                gap: 2rem;
+                margin: 2rem 0;
+                &-item{
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.8rem;
+                    svg{
+                        fill: $color-grey-dark-2    ;
+                        height: 2.5vw;
+                        width: 1.5vw;
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+    }
+    &__btn{
+        font-weight: 600;
+        width: 100%;
+        padding: 2rem 3rem;
+    }
+}
+
