@@ -1,0 +1,18 @@
+//////////////////////////////////////////
+// Header section layout
+
+.main-layout{
+    background-color: red;
+    display: grid;
+    // height: 80vh;
+    grid-template-columns: 6rem 1fr;
+}
+
+.navigation{
+    background-color: $color-primary;
+}
+
+.main{
+    background-color: green;
+}
+

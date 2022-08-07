@@ -1,0 +1,87 @@
+.header{
+
+    display: grid;
+    grid-template-columns: 70fr 30fr;
+    height: 80vh;
+    // background-color: red;
+
+    &__left-header{
+        // background-color: yellow;
+        padding: 3rem 5rem;
+        display: grid;
+        // grid-template-rows: repeat(3, minmax(min-content,1fr));
+        gap: 5rem;
+        background-image: 
+        linear-gradient(rgba($color-secondary,.95),rgba($color-secondary,.95))
+        ,url(../img/hero.jpeg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__logo{
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        img{
+            height: 100%;
+            display: block;
+        }
+    }
+
+    &-text{
+        &__title{
+            // background-color: red;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            color: $color-primary;
+            letter-spacing: 1px;
+        }
+        &__subtitle{
+            font-size: 4rem;
+            text-transform: capitalize;
+            // background-color: blue;
+            color: $color-grey-light-1;
+        }
+        &__btn{
+            margin-top: 1.5rem;
+            color: $color-grey-light-1;
+            background-color:$color-primary;
+            font-size: 1.6rem;
+            padding: 1.5rem 3rem;
+        }
+    }
+
+    &__feature{
+        display: grid;
+        // background-color: red;
+        gap: 1rem;
+        &-text{
+            letter-spacing: 1px;
+            color: $color-grey-light-2;
+            display: grid;
+            grid-template-columns: 1fr max-content 1fr;
+            text-transform: uppercase;
+            align-items: center;
+            gap: 1rem;
+            &::before
+            ,&::after{
+                content: "";
+                display: block;
+                height: 1px;
+                width: 100%;
+                background-color:  $color-grey-light-2;
+            }
+        }
+        &-box{
+            display: flex;
+            justify-content: space-around;
+            // background-color: green;
+            img{
+                height: 2vw;
+                filter: brightness(70%);
+                display: block;
+            }
+        }
+    }
+
+}

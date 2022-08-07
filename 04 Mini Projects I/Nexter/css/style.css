@@ -1,0 +1,131 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: sans-serif;
+  color: #6D5D4B;
+  font-weight: 300;
+  line-height: 1.6; }
+
+.btn {
+  display: inline-block;
+  border: none;
+  cursor: pointer; }
+
+.main-layout {
+  background-color: red;
+  display: grid;
+  grid-template-columns: 6rem 1fr; }
+
+.navigation {
+  background-color: #c69963; }
+
+.main {
+  background-color: green; }
+
+.header {
+  display: grid;
+  grid-template-columns: 70fr 30fr;
+  height: 80vh; }
+  .header__left-header {
+    padding: 3rem 5rem;
+    display: grid;
+    gap: 5rem;
+    background-image: linear-gradient(rgba(16, 29, 44, 0.95), rgba(16, 29, 44, 0.95)), url(../img/hero.jpeg);
+    background-position: center;
+    background-size: cover; }
+  .header__logo {
+    height: 3rem;
+    display: flex;
+    justify-content: center; }
+    .header__logo img {
+      height: 100%;
+      display: block; }
+  .header-text__title {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: #c69963;
+    letter-spacing: 1px; }
+  .header-text__subtitle {
+    font-size: 4rem;
+    text-transform: capitalize;
+    color: #f9f7f6; }
+  .header-text__btn {
+    margin-top: 1.5rem;
+    color: #f9f7f6;
+    background-color: #c69963;
+    font-size: 1.6rem;
+    padding: 1.5rem 3rem; }
+  .header__feature {
+    display: grid;
+    gap: 1rem; }
+    .header__feature-text {
+      letter-spacing: 1px;
+      color: #aaa;
+      display: grid;
+      grid-template-columns: 1fr max-content 1fr;
+      text-transform: uppercase;
+      align-items: center;
+      gap: 1rem; }
+      .header__feature-text::before, .header__feature-text::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: #aaa; }
+    .header__feature-box {
+      display: flex;
+      justify-content: space-around; }
+      .header__feature-box img {
+        height: 2vw;
+        filter: brightness(70%);
+        display: block; }
+
+.realtors {
+  background-color: #101d2c;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  gap: 4rem; }
+  .realtors__title {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    color: #B28451;
+    font-weight: 500; }
+
+.realtors-warpper {
+  display: grid;
+  gap: 3rem; }
+
+.realtor {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center; }
+  .realtor__img {
+    grid-row: 1/span 2;
+    margin-right: 1rem; }
+    .realtor__img img {
+      border-radius: 50%;
+      height: 4.5vw;
+      display: block; }
+  .realtor__name {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 1.6rem;
+    align-self: end;
+    color: #f9f7f6; }
+  .realtor__sold {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1.3rem;
+    align-self: start;
+    color: #aaa; }
