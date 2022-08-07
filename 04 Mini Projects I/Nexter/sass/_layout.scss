@@ -9,11 +9,9 @@
 }
 
 .navigation{
+    // display: flex;
+    // align-items: flex-start;
     background-color: $color-primary;
-}
-
-.main{
-    // background-color: green;
 }
 
 .container{
@@ -21,3 +19,19 @@
     margin: 0 auto;
 }
 
+.navigation{
+
+    .nav-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 2rem auto;
+        text-align: center;
+    }
+    span{
+        margin: 0 auto;
+        width: 70%;
+        height: 2px;
+        background-color: black;
+    }
+}
