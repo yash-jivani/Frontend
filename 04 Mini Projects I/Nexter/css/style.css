@@ -19,6 +19,13 @@ body {
   border: none;
   cursor: pointer; }
 
+.btn {
+  color: #f9f7f6;
+  background-color: #c69963;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  padding: 1.5rem 3rem; }
+
 .main-layout {
   display: grid;
   grid-template-columns: 6rem 1fr; }
@@ -158,3 +165,53 @@ body {
   .feature__text {
     color: #6D5D4B;
     font-size: 1.8rem; }
+
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr; }
+  .story__img {
+    position: relative;
+    background-image: linear-gradient(rgba(198, 153, 99, 0.4), rgba(198, 153, 99, 0.4)), url(../img/back.jpg);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    display: flex;
+    padding: 5vw; }
+    .story__img img {
+      margin: 0 auto;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); }
+  .story-img2 {
+    position: absolute;
+    bottom: 4rem;
+    right: -5rem;
+    z-index: 2;
+    width: 50% !important;
+    aspect-ratio: 4/2;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3); }
+  .story__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2rem;
+    background-color: #f9f7f6;
+    color: white;
+    padding: 7vw; }
+    .story__text-title {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: #B28451; }
+    .story__text-subtitle {
+      text-transform: capitalize;
+      font-style: italic;
+      font-size: 3rem;
+      color: #54483A; }
+    .story__text-para {
+      font-size: 1.6rem;
+      color: #6D5D4B; }
+  .story-btn {
+    margin-top: 2rem;
+    align-self: flex-start; }
