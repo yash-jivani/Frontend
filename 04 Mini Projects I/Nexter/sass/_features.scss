@@ -11,6 +11,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(31rem,1fr));
     gap: 4rem;
+    @media screen and (max-width:580px) {
+        margin: 10rem 0;;
+    }
 }
 
 .feature{
@@ -29,6 +32,15 @@
         display: block;
         grid-row: 1/2 span;
         width: 4vw;
+
+        @media screen and (max-width:730px) {
+            height: 5vw;
+            width: 5vw;
+        }
+        @media screen and (max-width:580px) {
+            height: 4rem;
+            width: 4rem;
+        }
     }
 
     &__title{

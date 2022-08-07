@@ -7,6 +7,9 @@
         grid-template-rows: repeat(7,1fr);
         // height: 80vh;
         gap: 1.5rem;
+        @media screen and (max-width:580px) {
+            gap: .5rem;
+        }
     }
     img{
         object-fit: cover;

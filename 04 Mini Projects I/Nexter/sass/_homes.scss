@@ -39,6 +39,10 @@
                         height: 2.5vw;
                         width: 1.5vw;
                         margin-right: 1rem;
+                        @media screen and (max-width:730px) {
+                            height: 4.5vw;
+                            width: 3.5vw;
+                        }
                     }
                 }
             }

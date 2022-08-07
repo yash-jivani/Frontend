@@ -7,6 +7,11 @@
     align-items: center;
     justify-items: center;
     gap: 4rem;
+
+    @media screen and (max-width:730px) {
+        padding: 4rem 0;
+    }
+
     &__title{
         text-transform: uppercase;
         // color: red;
@@ -20,6 +25,14 @@
     // background-color: red;
     display: grid;
     gap: 3rem;
+    @media screen and (max-width:730px) {
+        display: flex;
+        
+    }
+    @media screen and (max-width:580px) {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }
 
 .realtor{
@@ -36,6 +49,12 @@
             border-radius: 50%;
             height: 4.5vw;
             display: block;
+            @media screen and (max-width:730px) {
+                height: 5.5vw;
+            }
+            @media screen and (max-width:580px) {
+                height: 9.5vw;
+            }
         }
     }
     &__name{

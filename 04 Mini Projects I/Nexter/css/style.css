@@ -7,6 +7,9 @@
 
 html {
   font-size: 62.5%; }
+  @media screen and (max-width: 980px) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: sans-serif;
@@ -29,31 +32,52 @@ body {
 .main-layout {
   display: grid;
   grid-template-columns: 6rem 1fr; }
-
-.navigation {
-  background-color: #c69963; }
+  @media screen and (max-width: 880px) {
+    .main-layout {
+      grid-template-rows: auto 1fr;
+      grid-template-columns: 1fr; } }
 
 .container {
   max-width: 120rem;
-  margin: 0 auto; }
-
-.navigation .nav-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin: 2rem auto;
-  text-align: center; }
-
-.navigation span {
   margin: 0 auto;
-  width: 70%;
-  height: 2px;
-  background-color: black; }
+  padding: 0 2rem; }
+
+.navigation {
+  background-color: #c69963; }
+  @media screen and (max-width: 880px) {
+    .navigation {
+      display: flex;
+      justify-content: end; } }
+  .navigation .nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem auto;
+    text-align: center; }
+    @media screen and (max-width: 880px) {
+      .navigation .nav-wrapper {
+        margin: 2rem 0;
+        width: 7.5rem; } }
+    @media screen and (max-width: 580px) {
+      .navigation .nav-wrapper {
+        width: 5.5rem; } }
+  .navigation span {
+    margin: 0 auto;
+    width: 70%;
+    height: 2px;
+    background-color: black; }
 
 .header {
   display: grid;
   grid-template-columns: 70fr 30fr;
   height: 80vh; }
+  @media screen and (max-width: 730px) {
+    .header {
+      grid-template-columns: 1fr;
+      height: calc(100vh - 6rem); } }
+  @media screen and (max-width: 580px) {
+    .header {
+      height: auto; } }
   .header__left-header {
     padding: 3rem 5rem;
     display: grid;
@@ -61,6 +85,9 @@ body {
     background-image: linear-gradient(rgba(16, 29, 44, 0.95), rgba(16, 29, 44, 0.95)), url(../img/hero.jpeg);
     background-position: center;
     background-size: cover; }
+    @media screen and (max-width: 580px) {
+      .header__left-header {
+        padding: 3rem 2rem; } }
   .header__logo {
     height: 3rem;
     display: flex;
@@ -77,6 +104,14 @@ body {
     font-size: 4rem;
     text-transform: capitalize;
     color: #f9f7f6; }
+    @media screen and (max-width: 800px) {
+      .header-text__subtitle {
+        line-height: 1;
+        margin: 1rem 0; } }
+    @media screen and (max-width: 580px) {
+      .header-text__subtitle {
+        font-size: 2.5rem;
+        line-height: 1.3; } }
   .header-text__btn {
     margin-top: 1.5rem;
     color: #f9f7f6;
@@ -107,6 +142,9 @@ body {
         height: 2vw;
         filter: brightness(70%);
         display: block; }
+        @media screen and (max-width: 730px) {
+          .header__feature-box img {
+            height: 3vw; } }
 
 .realtors {
   background-color: #101d2c;
@@ -116,6 +154,9 @@ body {
   align-items: center;
   justify-items: center;
   gap: 4rem; }
+  @media screen and (max-width: 730px) {
+    .realtors {
+      padding: 4rem 0; } }
   .realtors__title {
     text-transform: uppercase;
     font-size: 1.6rem;
@@ -125,6 +166,13 @@ body {
 .realtors-warpper {
   display: grid;
   gap: 3rem; }
+  @media screen and (max-width: 730px) {
+    .realtors-warpper {
+      display: flex; } }
+  @media screen and (max-width: 580px) {
+    .realtors-warpper {
+      display: grid;
+      grid-template-columns: 1fr; } }
 
 .realtor {
   display: grid;
@@ -137,6 +185,12 @@ body {
       border-radius: 50%;
       height: 4.5vw;
       display: block; }
+      @media screen and (max-width: 730px) {
+        .realtor__img img {
+          height: 5.5vw; } }
+      @media screen and (max-width: 580px) {
+        .realtor__img img {
+          height: 9.5vw; } }
   .realtor__name {
     text-transform: capitalize;
     font-weight: 500;
@@ -159,6 +213,9 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
   gap: 4rem; }
+  @media screen and (max-width: 580px) {
+    .features-wrapper {
+      margin: 10rem 0; } }
 
 .feature {
   display: grid;
@@ -172,6 +229,14 @@ body {
     display: block;
     grid-row: 1/2 span;
     width: 4vw; }
+    @media screen and (max-width: 730px) {
+      .feature__icon {
+        height: 5vw;
+        width: 5vw; } }
+    @media screen and (max-width: 580px) {
+      .feature__icon {
+        height: 4rem;
+        width: 4rem; } }
   .feature__title {
     color: #54483A;
     font-size: 1.8rem; }
@@ -182,6 +247,12 @@ body {
 .story {
   display: grid;
   grid-template-columns: 1fr 1fr; }
+  @media screen and (max-width: 730px) {
+    .story {
+      grid-template-columns: 1fr; } }
+  @media screen and (max-width: 580px) {
+    .story {
+      margin: 8rem 0; } }
   .story__img {
     position: relative;
     background-image: linear-gradient(rgba(198, 153, 99, 0.4), rgba(198, 153, 99, 0.4)), url(../img/back.jpg);
@@ -196,6 +267,11 @@ body {
       display: block;
       object-fit: cover;
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); }
+      @media screen and (max-width: 730px) {
+        .story__img img {
+          margin: 0;
+          margin-right: auto;
+          width: 50%; } }
   .story-img2 {
     position: absolute;
     bottom: 4rem;
@@ -204,6 +280,9 @@ body {
     width: 50% !important;
     aspect-ratio: 4/2;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3); }
+    @media screen and (max-width: 730px) {
+      .story-img2 {
+        right: 5rem; } }
   .story__text {
     display: flex;
     flex-direction: column;
@@ -265,6 +344,10 @@ body {
             height: 2.5vw;
             width: 1.5vw;
             margin-right: 1rem; }
+            @media screen and (max-width: 730px) {
+              .homes-wrapper__home .list-container-item svg {
+                height: 4.5vw;
+                width: 3.5vw; } }
   .homes__btn {
     font-weight: 500;
     width: 100%;
@@ -278,6 +361,9 @@ body {
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(7, 1fr);
     gap: 1.5rem; }
+    @media screen and (max-width: 580px) {
+      .gallery-wrapper {
+        gap: .5rem; } }
   .gallery img {
     object-fit: cover;
     width: 100%;

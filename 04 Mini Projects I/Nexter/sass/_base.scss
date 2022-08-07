@@ -22,6 +22,9 @@ $color-grey-dark-2: #6D5D4B;
 
 html{
     font-size: 62.5%;
+    @media screen and (max-width:980px) {
+        font-size: 50%;
+    }
 }
 
 

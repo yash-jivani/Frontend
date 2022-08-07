@@ -6,27 +6,38 @@
     display: grid;
     // height: 80vh;
     grid-template-columns: 6rem 1fr;
-}
 
-.navigation{
-    // display: flex;
-    // align-items: flex-start;
-    background-color: $color-primary;
+    @media screen and (max-width:880px) {
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr;
+    }
 }
 
 .container{
     max-width: 120rem;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .navigation{
-
+    background-color: $color-primary;
+    @media screen and (max-width:880px) {
+        display: flex;
+        justify-content: end;
+    }
     .nav-wrapper{
         display: flex;
         flex-direction: column;
         gap: 1rem;
         margin: 2rem auto;
         text-align: center;
+        @media screen and (max-width:880px) {
+            margin: 2rem 0;
+            width: 7.5rem;
+        }
+        @media screen and (max-width:580px) {
+            width: 5.5rem;
+        }
     }
     span{
         margin: 0 auto;

@@ -5,6 +5,15 @@
     height: 80vh;
     // background-color: red;
 
+    @media screen and (max-width:730px) {
+        grid-template-columns: 1fr;
+        height: calc(100vh - 6rem);
+    }
+
+    @media screen and (max-width:580px) {
+        height: auto;
+    }
+
     &__left-header{
         // background-color: yellow;
         padding: 3rem 5rem;
@@ -16,6 +25,10 @@
         ,url(../img/hero.jpeg);
         background-position: center;
         background-size: cover;
+        @media screen and (max-width:580px) {
+            padding: 3rem 2rem;
+        }
+
     }
 
     &__logo{
@@ -41,6 +54,14 @@
             text-transform: capitalize;
             // background-color: blue;
             color: $color-grey-light-1;
+            @media screen and (max-width:800px) {
+                line-height: 1;
+                margin: 1rem 0;
+            }
+            @media screen and (max-width:580px) {
+                font-size: 2.5rem;
+                line-height: 1.3;
+            }
         }
         &__btn{
             margin-top: 1.5rem;
@@ -80,6 +101,10 @@
                 height: 2vw;
                 filter: brightness(70%);
                 display: block;
+
+                @media screen and (max-width:730px) {
+                    height: 3vw;
+                }
             }
         }
     }
