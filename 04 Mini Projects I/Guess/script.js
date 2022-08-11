@@ -25,28 +25,17 @@ checkBtn.addEventListener('click', function () {
 
   }
 
-  // if Number is Low
-  else if (guessInput < randomNumber) {
-    if (currentScore > 1) {
-      displayText.textContent = '📉 Too Low';
-      currentScore--;
-      score.textContent = currentScore;
-    } else {
-      displayText.textContent = '🛑 You lost the game';
-      score.textContent = 0;
-    }
+  else if(guessInput!==randomNumber){
 
-    // if Number is High
-  } else if (guessInput > randomNumber) {
     if (currentScore > 1) {
-      displayText.textContent = '📈 Too High';
+      displayText.textContent = (guessInput<randomNumber) ? '📉 Too Low' : '📈 Too High' ;
       currentScore--;
       score.textContent = currentScore;
     } else {
       displayText.textContent = '🛑 You lost the game';
       score.textContent = 0;
     }
-  }
+  }  
 });
 
 againBtn.addEventListener('click', function () {
