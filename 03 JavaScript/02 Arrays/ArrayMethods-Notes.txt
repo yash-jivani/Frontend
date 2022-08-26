@@ -1,0 +1,17 @@
+-> Mutable Array Methods in JavaScript::
+
+pop()
+push()
+shift()
+unshift()
+reverse()
+sort()
+splice()
+
+-> don’t mutate the original array, but return a new array instead::
+
+slice()
+concat()
+join()
+map()
+filter()
