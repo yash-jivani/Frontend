@@ -80,8 +80,6 @@ const dispalyMovements = function (movements) {
   });
 };
 
-dispalyMovements(account1.movements);
-
 // create UserNames
 const user1 = "Yash Jivani";
 function createUserNames(accs) {
@@ -101,22 +99,20 @@ const calcCurrentBalance = function (movements) {
   labelBalance.textContent = `${totalBalance} €`;
 };
 
-calcCurrentBalance(account1.movements);
-
-const calcDisplaySummary = function (movements) {
-  const totalIncomes = movements
+const calcDisplaySummary = function (acc) {
+  const totalIncomes = acc.movements
     .filter((currentMovement) => currentMovement > 0)
     .reduce((acc, curr) => acc + curr);
 
-  const totalWithdrawals = movements
+  const totalWithdrawals = acc.movements
     .filter((currMovement) => currMovement < 0)
     .reduce((acc, curr) => acc + curr);
 
-  const totalInterest = movements
+  const totalInterest = acc.movements
     .filter((currMovement) => {
       return currMovement > 0;
     })
-    .map((currMovement) => (currMovement * 1.2) / 100)
+    .map((currMovement) => (currMovement * acc.interestRate) / 100)
     .filter((value) => value > 1)
     .reduce((acc, curr, i, arr) => {
       // console.log(arr);
@@ -127,4 +123,36 @@ const calcDisplaySummary = function (movements) {
   labelSumInterest.textContent = `${totalInterest}€`;
 };
 
-calcDisplaySummary(account1.movements);
+// Login | event handler
+let currentAccount;
+btnLogin.addEventListener("click", function (e) {
+  // prevernt from submmiting
+  e.preventDefault();
+
+  let userInputUserName = inputLoginUsername.value.trim();
+  let userInputPIN = Number(inputLoginPin.value);
+
+  currentAccount = accounts.find((acc) => {
+    return userInputUserName === acc.username;
+  });
+
+  if (currentAccount?.pin === userInputPIN) {
+    // console.log("login");
+    // display UI & msgs
+
+    labelWelcome.textContent = `Welcome back, ${
+      currentAccount.owner.split(" ")[0]
+    }`;
+    containerApp.style.opacity = 1;
+    containerApp.style.pointerEvents = "all";
+
+    // clear the input fields
+    inputLoginPin.blur();
+    inputLoginUsername.value = inputLoginPin.value = "";
+
+    // display data
+    dispalyMovements(currentAccount.movements); // display movementsRow info
+    calcCurrentBalance(currentAccount.movements); // display current balance info
+    calcDisplaySummary(currentAccount); // display summary info
+  }
+});
