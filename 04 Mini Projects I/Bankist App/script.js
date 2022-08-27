@@ -180,3 +180,25 @@ btnTransfer.addEventListener("click", function (e) {
     updateUI(currentAccount);
   }
 });
+
+// close account
+btnClose.addEventListener("click", function (e) {
+  e.preventDefault();
+  let userInputUserName = inputCloseUsername.value.trim();
+  let userInputPIN = Number(inputClosePin.value);
+  inputCloseUsername.value = inputClosePin.value = "";
+  if (
+    userInputPIN === currentAccount.pin &&
+    userInputUserName === currentAccount.username
+  ) {
+    // console.log("correct");
+    const index = accounts.findIndex(
+      (acc) => acc.username === userInputUserName
+    );
+    console.log(index);
+    accounts.splice(index, 1);
+    containerApp.style.opacity = 0;
+    containerApp.style.pointerEvents = "none";
+    labelWelcome.textContent = "Log in to get started";
+  }
+});
