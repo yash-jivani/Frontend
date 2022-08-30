@@ -128,6 +128,7 @@ function updateUI(acc) {
   dispalyMovements(acc.movements); // display movementsRow info
   calcCurrentBalance(acc); // display current balance info
   calcDisplaySummary(acc); // display summary info
+  setDate();
 }
 
 // Login | event handler
@@ -228,3 +229,17 @@ btnSort.addEventListener("click", function (e) {
   dispalyMovements(currentAccount.movements, !sorted);
   sorted = !sorted;
 });
+
+// setting current date
+const setDate = function () {
+  const option = {
+    hour:'numeric',
+    minute:'numeric',
+    day:'2-digit',
+    month:'2-digit',
+    year:'numeric'
+  }
+  let currentDate = new Date();
+  console.log(`${currentDate}`);
+  labelDate.textContent = `${new Intl.DateTimeFormat(navigator.language, option).format(new Date())}`;
+};
