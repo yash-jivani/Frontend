@@ -136,7 +136,8 @@ const navHeight = nav.getBoundingClientRect().height;
 function sticky(entries) {
   const entry = entries[0];
   // console.log(entry);
-  if (entry.isIntersecting === false) { // when header is not in viewport
+  if (entry.isIntersecting === false) {
+    // when header is not in viewport
     nav.classList.add("sticky");
   } else {
     nav.classList.remove("sticky");
@@ -149,3 +150,27 @@ const options = {
 };
 const observer = new IntersectionObserver(sticky, options);
 observer.observe(header);
+
+/////////////////////////////////////
+// Reveal On scroll
+
+const allSections = document.querySelectorAll(".section");
+// console.log(allSections);
+function revealSection(entries, observer) {
+  const entry = entries[0];
+  const current_viewportSection = entry.target;
+  if (entry.isIntersecting === false) {
+    return;
+  }
+
+  current_viewportSection.classList.remove("section--hidden");
+  observer.unobserve(current_viewportSection);
+}
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+allSections.forEach((section) => {
+  sectionObserver.observe(section);
+  section.classList.add("section--hidden");
+});
