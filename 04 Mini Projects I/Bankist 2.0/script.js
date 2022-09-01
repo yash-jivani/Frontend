@@ -56,6 +56,7 @@ mainNav.addEventListener("click", function (e) {
 
 /////////////////////////////////////
 // Tabbed component
+
 const tabContainer = document.querySelector(".operations__tab-container");
 const tabs = document.querySelectorAll(".operations__tab");
 const tabsContent = document.querySelectorAll(".operations__content");
@@ -88,7 +89,7 @@ tabContainer.addEventListener("click", function (e) {
 });
 
 /////////////////////////////////////
-// nav fade animation
+// Nav fade animation
 
 const hoverHandler = function (e, opacity) {
   if (e.target.classList.contains("nav__link")) {
@@ -111,3 +112,40 @@ mainNav.addEventListener("mouseover", function (e) {
 mainNav.addEventListener("mouseout", function (e) {
   hoverHandler(e, 1);
 });
+
+/////////////////////////////////////
+// Sticky nav :
+
+// const nav = document.querySelector('.nav')
+// const section1 = document.querySelector("#section--1");
+// const initialCoords = section1.getBoundingClientRect();
+
+// window.addEventListener('scroll',function(e){
+//   // console.log(window.scrollY)
+//   if(window.scrollY > initialCoords.top){
+//     nav.classList.add('sticky')
+//   }else{
+//     nav.classList.remove('sticky')
+//   }
+// })
+
+// Intersection Observer API
+const header = document.querySelector(".header");
+const nav = document.querySelector(".nav");
+const navHeight = nav.getBoundingClientRect().height;
+function sticky(entries) {
+  const entry = entries[0];
+  // console.log(entry);
+  if (entry.isIntersecting === false) { // when header is not in viewport
+    nav.classList.add("sticky");
+  } else {
+    nav.classList.remove("sticky");
+  }
+}
+const options = {
+  root: null, // viewport
+  threshold: 0, //
+  rootMargin: `-${navHeight}px`,
+};
+const observer = new IntersectionObserver(sticky, options);
+observer.observe(header);
