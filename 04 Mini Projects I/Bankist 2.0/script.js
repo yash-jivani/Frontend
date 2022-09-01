@@ -53,3 +53,36 @@ mainNav.addEventListener("click", function (e) {
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
 });
+
+/////////////////////////////////////
+// Tabbed component
+const tabContainer = document.querySelector(".operations__tab-container");
+const tabs = document.querySelectorAll(".operations__tab");
+const tabsContent = document.querySelectorAll(".operations__content");
+// console.log(tabs);
+// console.log(tabContainer);
+// console.log(tabsContent);
+
+// event deligation | closest method
+tabContainer.addEventListener("click", function (e) {
+  const clickedButton = e.target.closest("button");
+  // console.log(clickedButton);
+
+  // outside button + inside tabs container => clickedButton->null
+  if (clickedButton === null) return;
+
+  // activate button
+  tabs.forEach((currTab) => {
+    currTab.classList.remove("operations__tab--active");
+  });
+  clickedButton.classList.add("operations__tab--active");
+
+  // activate content
+  const currnetTabNumber = clickedButton.dataset.tab;
+  tabsContent.forEach((currContent) => {
+    currContent.classList.remove("operations__content--active");
+  });
+  document
+    .querySelector(`.operations__content--${currnetTabNumber}`)
+    .classList.add("operations__content--active");
+});
