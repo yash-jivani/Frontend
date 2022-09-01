@@ -86,3 +86,28 @@ tabContainer.addEventListener("click", function (e) {
     .querySelector(`.operations__content--${currnetTabNumber}`)
     .classList.add("operations__content--active");
 });
+
+/////////////////////////////////////
+// nav fade animation
+
+const hoverHandler = function (e, opacity) {
+  if (e.target.classList.contains("nav__link")) {
+    const currLink = e.target;
+    const otherLinks = currLink
+      .closest(".nav__links")
+      .querySelectorAll(".nav__link");
+
+    otherLinks.forEach((link) => {
+      if (link !== currLink) {
+        link.style.opacity = opacity;
+      }
+    });
+  }
+};
+mainNav.addEventListener("mouseover", function (e) {
+  hoverHandler(e, 0.6);
+});
+
+mainNav.addEventListener("mouseout", function (e) {
+  hoverHandler(e, 1);
+});
