@@ -14,12 +14,12 @@ const Student = function (firstName, lastName, course) {
   //   this.lastName = lastName;
 
   // inherit Person's constructor
-  Person.call(this, firstName, lastName); // inheritance
+  Person.call(this, firstName, lastName); 
   this.course = course;
 };
 
 // join prototype
-Student.prototype = Object.create(Person.prototype);
+Student.prototype = Object.create(Person.prototype);  // inheritance
 Student.prototype.constructor = Student;
 
 Student.prototype.getCourseName = function () {
