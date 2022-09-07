@@ -3,6 +3,7 @@
 class Workout {
   date = new Date();
   id = (Date.now() + "").slice(-10);
+  clicks = 0;
   constructor(coords, distance, duration) {
     this.coords = coords; // [lat,lng]
     this.distance = distance; // in km
@@ -15,6 +16,10 @@ class Workout {
     this.description = `${this.type[0].toUpperCase()}${this.type.slice(1)} On ${
       months[this.date.getMonth()]
     } ${this.date.getDate()}`;
+  }
+
+  click() {
+    this.clicks++;
   }
 }
 
@@ -59,12 +64,14 @@ const inputElevation = document.querySelector(".form__input--elevation");
 class App {
   #map;
   #mapEvent;
+  #mapZoomLev = 13;
   #workouts = [];
 
   constructor() {
     this._getPosition();
     form.addEventListener("submit", this._newWorkout.bind(this));
     inputType.addEventListener("change", this._toggleElevationField.bind(this));
+    containerWorkouts.addEventListener("click", this._moveToPopup.bind(this));
   }
 
   _getPosition() {
@@ -160,7 +167,7 @@ class App {
 
     // Add new Object to workout array
     this.#workouts.push(workout);
-    console.log(this.#workouts);
+    // console.log(this.#workouts);
 
     // Render workout on map as marker
     this._renderWorkoutMarker(workout);
@@ -196,7 +203,7 @@ class App {
   _renderWorkout(workout) {
     var myLi = document.createElement("div");
     let html = `
-    <li class="workout workout--${workout.type}" data-id="1234567890">
+    <li class="workout workout--${workout.type}" data-id=${workout.id}>
       <h2 class="workout__title">${workout.description}</h2>
       <div class="workout__details">
         <span class="workout__icon">${
@@ -245,6 +252,26 @@ class App {
     myLi.innerHTML = html;
 
     form.insertAdjacentElement("afterend", myLi);
+  }
+
+  _moveToPopup(e) {
+    const workoutEl = e.target.closest(".workout");
+    // console.log(workoutEl);
+
+    if (!workoutEl) return;
+
+    const workout = this.#workouts.find(
+      (work) => work.id === workoutEl.dataset.id
+    );
+
+    this.#map.setView(workout.coords, this.#mapZoomLev, {
+      animate: true,
+      pan: {
+        duration: 1,
+      },
+    });
+    workout.click();
+    // console.log(workout);
   }
 }
 
