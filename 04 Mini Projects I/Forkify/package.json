@@ -10,9 +10,12 @@
   "author": "Yash Jivani",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
     "parcel": "^2.7.0"
   },
   "dependencies": {
+    "core-js": "^3.25.1",
+    "regenerator-runtime": "^0.13.9",
     "sass": "^1.54.9"
   }
 }
