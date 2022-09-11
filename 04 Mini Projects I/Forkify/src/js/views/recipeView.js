@@ -29,6 +29,12 @@ class RecipeView {
     this.#parentElement.insertAdjacentHTML("afterbegin", markup);
   };
 
+  addHandlerRender(handler){
+    ["load", "hashchange"].forEach((event) => {
+      window.addEventListener(event, handler);
+    });
+  }
+
   #generateMarkup() {
     return `        
     <figure class="recipe__fig">
@@ -115,8 +121,7 @@ class RecipeView {
   }
 
   #generateMarkukpIngredient(ingredient) {
-    return `
-
+    return `  
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
           <use href="${icons}#icon-check"></use>

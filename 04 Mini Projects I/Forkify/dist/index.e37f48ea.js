@@ -554,14 +554,10 @@ const controlRecipes = async function() {
         console.log(err);
     }
 };
-// window.addEventListener("hashchange", controlRecipes);
-// window.addEventListener("load", controlRecipes);
-[
-    "load",
-    "hashchange"
-].forEach((event)=>{
-    window.addEventListener(event, controlRecipes);
-});
+const init = function() {
+    (0, _recipeViewDefault.default).addHandlerRender(controlRecipes);
+};
+init();
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","regenerator-runtime/runtime":"dXNgZ","core-js/modules/web.immediate.js":"49tUX","./model":"Y4A21","./views/recipeView":"l60JC"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -2365,6 +2361,14 @@ class RecipeView {
         this.#parentElement.innerHTML = "";
         this.#parentElement.insertAdjacentHTML("afterbegin", markup);
     };
+    addHandlerRender(handler) {
+        [
+            "load",
+            "hashchange"
+        ].forEach((event)=>{
+            window.addEventListener(event, handler);
+        });
+    }
      #generateMarkup() {
         return `        
     <figure class="recipe__fig">
@@ -2442,8 +2446,7 @@ class RecipeView {
     </div>`;
     }
      #generateMarkukpIngredient(ingredient) {
-        return `
-
+        return `  
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
           <use href="${0, _iconsSvgDefault.default}#icon-check"></use>
