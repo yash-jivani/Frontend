@@ -30,8 +30,9 @@ export default class View {
       const curEl = curElements[i];
       if (
         !newEle.isEqualNode(curEl) &&
-        newEle.firstChild.nodeValue.trim() !== ""
+        newEle.firstChild?.nodeValue.trim() !== ''
       ) {
+        // console.log('💥', newEl.firstChild.nodeValue.trim());
         curEl.textContent = newEle.textContent;
       }
 

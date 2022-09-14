@@ -591,9 +591,16 @@ const controlServing = function(newServings) {
     // recipeView.render(model.state.recipe);
     (0, _recipeViewDefault.default).update(_model.state.recipe);
 };
+const controlAddBookmark = function() {
+    if (!_model.state.recipe.bookmarked) _model.addBookmark(_model.state.recipe);
+    else _model.deleteBookmark(_model.state.recipe.id);
+    (0, _recipeViewDefault.default).update(_model.state.recipe);
+// bookmarksView.render(model.state.bookmarks);
+};
 const init = function() {
     (0, _recipeViewDefault.default).addHandlerRender(controlRecipes);
     (0, _recipeViewDefault.default).addHandlerUpdateServings(controlServing);
+    (0, _recipeViewDefault.default).addHandlerAddBookmark(controlAddBookmark);
     (0, _searchViewDefault.default).addHandlerSearch(controlSearchResults);
     (0, _paginationViewDefault.default).addHandlerClick(controlPagination);
 // controlServing();
@@ -2313,6 +2320,8 @@ parcelHelpers.export(exports, "loadRecipe", ()=>loadRecipe);
 parcelHelpers.export(exports, "loadSearchResults", ()=>loadSearchResults);
 parcelHelpers.export(exports, "getSearchResultsPage", ()=>getSearchResultsPage);
 parcelHelpers.export(exports, "updateServings", ()=>updateServings);
+parcelHelpers.export(exports, "addBookmark", ()=>addBookmark);
+parcelHelpers.export(exports, "deleteBookmark", ()=>deleteBookmark);
 var _regeneratorRuntime = require("regenerator-runtime");
 var _config = require("./config");
 var _helpers = require("./helpers");
@@ -2323,7 +2332,8 @@ const state = {
         query: "",
         results: [],
         resultsPerPage: (0, _config.RES_PER_PAGE)
-    }
+    },
+    bookmarks: []
 };
 const loadRecipe = async function(id) {
     try {
@@ -2339,7 +2349,9 @@ const loadRecipe = async function(id) {
             cookingTime: recipe.cooking_time,
             ingredients: recipe.ingredients
         };
-        console.log(state.recipe);
+        if (state.bookmarks.some((bookmark)=>bookmark.id === id)) state.recipe.bookmarked = true;
+        else state.recipe.bookmarked = false;
+    // console.log(state.recipe);
     } catch (err) {
         throw err;
     }
@@ -2357,6 +2369,7 @@ const loadSearchResults = async function(query) {
                 image: rec.image_url
             };
         });
+        state.search.page = 1;
     // console.log(state.search.results);
     } catch (err) {
         throw err;
@@ -2373,6 +2386,15 @@ const updateServings = function(newServings) {
         ing.quantity = ing.quantity * newServings / state.recipe.servings;
     });
     state.recipe.servings = newServings;
+};
+const addBookmark = function(recipe) {
+    state.bookmarks.push(recipe);
+    if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
+};
+const deleteBookmark = function(id) {
+    const index = state.bookmarks.findIndex((el)=>el.id === id);
+    state.bookmarks.splice(index, 1);
+    if (id === state.recipe.id) state.recipe.bookmarked = false;
 };
 
 },{"regenerator-runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./config":"k5Hzs","./helpers":"hGI1E"}],"k5Hzs":[function(require,module,exports) {
@@ -2406,7 +2428,7 @@ const getJSON = async function(url) {
             timeout((0, _config.TIMEOUT_SEC))
         ]);
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         if (response.ok === false) throw new Error(`${data.message} (${response.status})`);
         return data;
     } catch (err) {
@@ -2440,6 +2462,13 @@ class RecipeView extends (0, _viewDefault.default) {
             if (!btn) return;
             const updateTo = +btn.dataset.updateTo;
             if (updateTo > 0) handler(updateTo);
+        });
+    }
+    addHandlerAddBookmark(handler) {
+        this._parentElement.addEventListener("click", function(e) {
+            const btn = e.target.closest(".btn--bookmark");
+            if (!btn) return;
+            handler();
         });
     }
     _generateMarkup() {
@@ -2483,9 +2512,9 @@ class RecipeView extends (0, _viewDefault.default) {
       <div class="recipe__user-generated">
         
       </div>
-      <button class="btn--round">
+      <button class="btn--round btn--bookmark">
         <svg class="">
-          <use href="${0, _iconsSvgDefault.default}#icon-bookmark-fill"></use>
+          <use href="${0, _iconsSvgDefault.default}#icon-bookmark${this._data.bookmarked ? "-fill" : ""}"></use>
         </svg>
       </button>
     </div>
@@ -2849,7 +2878,8 @@ class View {
         // console.log(curElements);
         newElements.forEach((newEle, i)=>{
             const curEl = curElements[i];
-            if (!newEle.isEqualNode(curEl) && newEle.firstChild.nodeValue.trim() !== "") curEl.textContent = newEle.textContent;
+            if (!newEle.isEqualNode(curEl) && newEle.firstChild?.nodeValue.trim() !== "") // console.log('💥', newEl.firstChild.nodeValue.trim());
+            curEl.textContent = newEle.textContent;
             if (!newEle.isEqualNode(curEl)) Array.from(newEle.attributes).forEach((attr)=>curEl.setAttribute(attr.name, attr.value));
         });
     }
